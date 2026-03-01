@@ -17,6 +17,12 @@ public class ArrayUtil {
         return arr;
     }
 
+    public static int[] copyArray(int[] arr) {
+        int[] res = new int[arr.length];
+        System.arraycopy(arr, 0, res, 0, arr.length);
+        return res;
+    }
+
     public static void printArray(int[] arr) {
         if (arr == null) {
             return;
@@ -48,8 +54,11 @@ public class ArrayUtil {
     }
 
     public static void swap(int[] arr, int i, int j) {
-        arr[i] ^= arr[j];
-        arr[j] ^= arr[i];
-        arr[i] ^= arr[j];
+//        arr[i] ^= arr[j];
+//        arr[j] ^= arr[i];
+//        arr[i] ^= arr[j];
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
